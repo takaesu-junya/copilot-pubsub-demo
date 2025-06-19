@@ -1,0 +1,9 @@
+{
+    "name": "worker",
+    "version": "1.0.0",
+    "description": "Simple worker service",
+    "main": "app.js",
+    "dependencies": {
+      "@aws-sdk/client-sqs": "^3.370.0"
+    }
+  }

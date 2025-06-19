@@ -1,0 +1,25 @@
+name: publisher
+type: Load Balanced Web Service
+
+image:
+  build: publisher/Dockerfile
+  port: 3000
+
+http:
+  path: '/'
+  healthcheck: '/health'
+
+cpu: 256
+memory: 512
+platform: linux/x86_64
+count: 1
+exec: true
+network:
+  connect: true
+
+publish:
+  topics:
+    - name: messagesTopic
+
+variables:
+  PORT: 3000

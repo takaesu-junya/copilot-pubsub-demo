@@ -1,0 +1,5 @@
+name: dev
+type: Environment
+
+observability:
+  container_insights: false

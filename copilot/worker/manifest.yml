@@ -1,0 +1,21 @@
+name: worker
+type: Worker Service
+
+image:
+  build: worker/Dockerfile
+
+cpu: 256
+memory: 512
+platform: linux/x86_64
+count: 1
+exec: true
+
+subscribe:
+  topics: 
+    - name: messagesTopic
+      service: publisher
+  queues:
+    retention: 24h
+    timeout: 30s
+    dead_letter:
+      tries: 5
